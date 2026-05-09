@@ -1,0 +1,578 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Move Component(s) Origin to Grid</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Move Component(s) Origin to Grid</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9/05/2026</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:37:38 pm</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc" class="file"><acronym title="C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc">C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="ID1BPT1U35U4WUMLBNXCVCSAPRCCA02REUUFKJXXHMVV5DH24HHNBK"><h2>Components Origin</h2></a><a name="IDSVP01KCBCBRHO2IGAD5IM3MH1M3WDUOQUF0DJYE5M3WFCJDSJMAP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning"></th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=116.142mil|Location2.X=363.504mil|Location1.Y=442.874mil|Location2.Y=3121.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=116.142mil|Location2.X=363.504mil|Location1.Y=442.874mil|Location2.Y=3121.615mil|Absolute=True">DIP Component H2-ESQ-126-14-G-D (5.213mm,13.989mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=346.929mil|Location2.X=563.465mil|Location1.Y=442.874mil|Location2.Y=3121.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=346.929mil|Location2.X=563.465mil|Location1.Y=442.874mil|Location2.Y=3121.615mil|Absolute=True">DIP Component H1-ESQ-126-14-G-D (10.292mm,13.989mm) on Top Layer</acronym></a> - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5044.5mil|Location2.X=5165.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5044.5mil|Location2.X=5165.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True">SOIC Component U3-MP2393GTL-Z (129.667mm,137.795mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12539.5mil|Location2.X=12660.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12539.5mil|Location2.X=12660.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True">SOIC Component U2-MP2393GTL-Z (320.04mm,137.795mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19139.5mil|Location2.X=19260.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19139.5mil|Location2.X=19260.039mil|Location1.Y=5371.319mil|Location2.Y=5580.481mil|Absolute=True">SOIC Component U1-MP2393GTL-Z (487.68mm,137.795mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3036.299mil|Location2.X=3323.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3036.299mil|Location2.X=3323.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW8-ANT11SF1CQE (80.772mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6136.299mil|Location2.X=6423.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6136.299mil|Location2.X=6423.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW7-ANT11SF1CQE (159.512mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7156.299mil|Location2.X=7443.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7156.299mil|Location2.X=7443.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW6-ANT11SF1CQE (185.42mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2696.299mil|Location2.X=2983.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2696.299mil|Location2.X=2983.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW5-ANT11SF1CQE (72.136mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8181.299mil|Location2.X=8468.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8181.299mil|Location2.X=8468.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW4-ANT11SF1CQE (211.455mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10811.299mil|Location2.X=11098.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10811.299mil|Location2.X=11098.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW3-ANT11SF1CQE (278.257mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15376.299mil|Location2.X=15663.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15376.299mil|Location2.X=15663.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW2-ANT11SF1CQE (394.208mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17856.299mil|Location2.X=18143.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17856.299mil|Location2.X=18143.701mil|Location1.Y=5367.126mil|Location2.Y=5986.481mil|Absolute=True">Small Component SW1-ANT11SF1CQE (457.2mm,142.875mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3955.315mil|Location2.X=4135.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3955.315mil|Location2.X=4135.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R47-1.2k (101.473mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5215.315mil|Location2.X=5395.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5215.315mil|Location2.X=5395.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R46-* (133.477mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6475.315mil|Location2.X=6655.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6475.315mil|Location2.X=6655.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R45-620 (165.481mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6925.315mil|Location2.X=7105.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6925.315mil|Location2.X=7105.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R44-* (176.911mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7950.315mil|Location2.X=8130.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7950.315mil|Location2.X=8130.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R43-240 (202.946mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8910.315mil|Location2.X=9090.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8910.315mil|Location2.X=9090.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R42-* (227.33mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14936.5mil|Location2.X=15096.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14936.5mil|Location2.X=15096.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R41-1.2k (381.127mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14710.315mil|Location2.X=14890.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14710.315mil|Location2.X=14890.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R40-620 (374.65mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14480.315mil|Location2.X=14660.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14480.315mil|Location2.X=14660.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R39-620 (368.808mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14250.315mil|Location2.X=14430.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14250.315mil|Location2.X=14430.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R38-240 (362.966mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14020.315mil|Location2.X=14200.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14020.315mil|Location2.X=14200.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R37-240 (357.124mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22425.315mil|Location2.X=22605.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22425.315mil|Location2.X=22605.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R36-1.2k (570.611mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21230.315mil|Location2.X=21410.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21230.315mil|Location2.X=21410.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R35-11k (540.258mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22195.315mil|Location2.X=22375.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22195.315mil|Location2.X=22375.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R34-620 (564.769mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21000.315mil|Location2.X=21180.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21000.315mil|Location2.X=21180.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R33-6.8k (534.416mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21965.315mil|Location2.X=22145.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21965.315mil|Location2.X=22145.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R32-240 (558.927mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20786.5mil|Location2.X=20946.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20786.5mil|Location2.X=20946.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R31-4.3k (529.717mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5675.315mil|Location2.X=5855.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5675.315mil|Location2.X=5855.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R30-3.9k (145.161mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5445.315mil|Location2.X=5625.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5445.315mil|Location2.X=5625.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R29-270k (139.319mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5905.315mil|Location2.X=6085.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5905.315mil|Location2.X=6085.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R28-330k (151.003mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7720.315mil|Location2.X=7900.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7720.315mil|Location2.X=7900.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R27-10k (197.104mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7490.315mil|Location2.X=7670.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7490.315mil|Location2.X=7670.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R26-33k (191.262mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11715.315mil|Location2.X=11895.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11715.315mil|Location2.X=11895.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R25-3.9k (298.577mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12940.315mil|Location2.X=13120.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12940.315mil|Location2.X=13120.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R24-270k (329.692mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12710.315mil|Location2.X=12890.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12710.315mil|Location2.X=12890.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R23-330k (323.85mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16695.315mil|Location2.X=16875.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16695.315mil|Location2.X=16875.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R22-10k (425.069mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18746.5mil|Location2.X=18906.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18746.5mil|Location2.X=18906.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R21-3.9k (477.901mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19310.315mil|Location2.X=19490.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19310.315mil|Location2.X=19490.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R20-270k (491.49mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20566.5mil|Location2.X=20736.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20566.5mil|Location2.X=20736.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R19-330k (524.129mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1520.315mil|Location2.X=1750.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1520.315mil|Location2.X=1750.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R18B-10k (39.624mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1240.315mil|Location2.X=1470.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1240.315mil|Location2.X=1470.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R18A-10k (32.512mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=285.315mil|Location2.X=515.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=285.315mil|Location2.X=515.432mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R17A-4.7k (8.255mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1796.5mil|Location2.X=1966.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1796.5mil|Location2.X=1966.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R16-39k (47.371mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.5mil|Location2.X=2186.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2016.5mil|Location2.X=2186.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R15-3.3k (52.959mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4626.5mil|Location2.X=4796.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4626.5mil|Location2.X=4796.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R13-20 (119.253mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9581.5mil|Location2.X=9731.458mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9581.5mil|Location2.X=9731.458mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R11-15k (245.11mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9781.5mil|Location2.X=9951.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9781.5mil|Location2.X=9951.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R10-39k (250.19mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10001.5mil|Location2.X=10138.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10001.5mil|Location2.X=10138.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R9-1k (255.778mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10186.5mil|Location2.X=10323.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10186.5mil|Location2.X=10323.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R8-220 (260.477mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11946.5mil|Location2.X=12083.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11946.5mil|Location2.X=12083.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R7-20 (305.181mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15150.315mil|Location2.X=15330.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15150.315mil|Location2.X=15330.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R6B-1k (385.826mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15715.315mil|Location2.X=15895.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15715.315mil|Location2.X=15895.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component R6A-12k (400.177mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16506.5mil|Location2.X=16643.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16506.5mil|Location2.X=16643.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R5-10k (421.005mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16921.5mil|Location2.X=17058.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16921.5mil|Location2.X=17058.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R4-39k (431.546mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17111.5mil|Location2.X=17248.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17111.5mil|Location2.X=17248.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R3-1k (436.372mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17296.5mil|Location2.X=17433.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17296.5mil|Location2.X=17433.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R2-220 (441.071mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18951.5mil|Location2.X=19088.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18951.5mil|Location2.X=19088.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component R1-20 (483.108mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19976.016mil|Location2.X=20143.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19976.016mil|Location2.X=20143.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True">SMT Small Component Q3-MMBT619 (509.524mm,138.176mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19761.016mil|Location2.X=19928.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19761.016mil|Location2.X=19928.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True">SMT Small Component Q2-MMBT619 (504.063mm,138.176mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19541.016mil|Location2.X=19708.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19541.016mil|Location2.X=19708.984mil|Location1.Y=5368.016mil|Location2.Y=5611.481mil|Absolute=True">SMT Small Component Q1-MMBT619 (498.475mm,138.176mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3373.5mil|Location2.X=3686.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3373.5mil|Location2.X=3686.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True">SMT Small Component L3-SPM6530T-4R7M100 (89.662mm,139.954mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11148.5mil|Location2.X=11461.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11148.5mil|Location2.X=11461.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True">SMT Small Component L2-SPM6530T-4R7M100 (287.147mm,139.954mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18193.5mil|Location2.X=18506.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18193.5mil|Location2.X=18506.496mil|Location1.Y=5371.221mil|Location2.Y=5748.481mil|Absolute=True">SMT Small Component L1-SPM6530T-3R3M100 (466.09mm,139.954mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6761mil|Location2.X=7141mil|Location1.Y=1960mil|Location2.Y=2233.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6761mil|Location2.X=7141mil|Location1.Y=1960mil|Location2.Y=2233.981mil|Absolute=True">Small Component J12-1217861-1 (178.562mm,52.324mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6266mil|Location2.X=6646mil|Location1.Y=1970mil|Location2.Y=2243.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6266mil|Location2.X=6646mil|Location1.Y=1970mil|Location2.Y=2243.981mil|Absolute=True">Small Component J11-1217861-1 (165.989mm,52.578mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5786mil|Location2.X=6166mil|Location1.Y=1965mil|Location2.Y=2239.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5786mil|Location2.X=6166mil|Location1.Y=1965mil|Location2.Y=2239.981mil|Absolute=True">Small Component J10-1217861-1 (153.797mm,52.451mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5331mil|Location2.X=5711mil|Location1.Y=1965mil|Location2.Y=2239.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5331mil|Location2.X=5711mil|Location1.Y=1965mil|Location2.Y=2239.981mil|Absolute=True">Small Component J9-1217861-1 (142.24mm,52.451mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=2434mil|Location2.Y=2913.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=2434mil|Location2.Y=2913.981mil|Absolute=True">Small Component J8-1217861-1 (208.28mm,64.643mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=2924mil|Location2.Y=3403.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=2924mil|Location2.Y=3403.981mil|Absolute=True">Small Component J7-1217861-1 (208.28mm,77.089mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=3409mil|Location2.Y=3888.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=3409mil|Location2.Y=3888.981mil|Absolute=True">Small Component J6-1217861-1 (208.28mm,89.408mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=3924mil|Location2.Y=4404.225mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8100mil|Location2.X=8274.5mil|Location1.Y=3924mil|Location2.Y=4404.225mil|Absolute=True">Small Component J5-1217861-1 (208.28mm,102.489mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8070mil|Location2.X=8244.5mil|Location1.Y=179mil|Location2.Y=658.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8070mil|Location2.X=8244.5mil|Location1.Y=179mil|Location2.Y=658.981mil|Absolute=True">Small Component J4-1217861-1 (207.518mm,7.366mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8055mil|Location2.X=8229.5mil|Location1.Y=769mil|Location2.Y=1248.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8055mil|Location2.X=8229.5mil|Location1.Y=769mil|Location2.Y=1248.981mil|Absolute=True">Small Component J3-1217861-1 (207.137mm,22.352mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8070mil|Location2.X=8244.5mil|Location1.Y=1354mil|Location2.Y=1833.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8070mil|Location2.X=8244.5mil|Location1.Y=1354mil|Location2.Y=1833.981mil|Absolute=True">Small Component J2-1217861-1 (207.518mm,37.211mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8090mil|Location2.X=8264.5mil|Location1.Y=1829mil|Location2.Y=2308.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8090mil|Location2.X=8264.5mil|Location1.Y=1829mil|Location2.Y=2308.981mil|Absolute=True">Small Component J1-1217861-1 (208.026mm,49.276mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4846.5mil|Location2.X=4996.458mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4846.5mil|Location2.X=4996.458mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D11-LTST-C190 Series (124.587mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6707.032mil|Location2.X=6877.452mil|Location1.Y=5366.929mil|Location2.Y=5583.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6707.032mil|Location2.X=6877.452mil|Location1.Y=5366.929mil|Location2.Y=5583.481mil|Absolute=True">SMT Small Component D10-LTST-C190 Series (171.069mm,137.795mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8521.5mil|Location2.X=8641.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8521.5mil|Location2.X=8641.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D9-LTST-C190 Series (217.932mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13846.5mil|Location2.X=13966.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13846.5mil|Location2.X=13966.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D8-LTST-C190 Series (353.187mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13676.5mil|Location2.X=13796.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13676.5mil|Location2.X=13796.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D7-LTST-C190 Series (348.869mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13506.5mil|Location2.X=13626.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13506.5mil|Location2.X=13626.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D6-LTST-C190 Series (344.551mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13336.5mil|Location2.X=13456.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13336.5mil|Location2.X=13456.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D5-LTST-C190 Series (340.233mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13166.5mil|Location2.X=13286.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13166.5mil|Location2.X=13286.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D4-LTST-C190 Series (335.915mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21626.5mil|Location2.X=21746.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21626.5mil|Location2.X=21746.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D3-LTST-C190 Series (550.799mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21796.5mil|Location2.X=21916.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21796.5mil|Location2.X=21916.468mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D2-LTST-C190 Series (555.117mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21456.5mil|Location2.X=21573.071mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21456.5mil|Location2.X=21573.071mil|Location1.Y=5368.425mil|Location2.Y=5522.481mil|Absolute=True">SMT Small Component D1-LTST-C190 Series (546.481mm,137.033mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.315mil|Location2.X=2650.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2470.315mil|Location2.X=2650.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component C24-22uF (63.754mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2240.315mil|Location2.X=2420.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2240.315mil|Location2.X=2420.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component C23-22uF (57.912mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=795.315mil|Location2.X=975.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=795.315mil|Location2.X=975.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component C22-1nF (21.209mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1026.5mil|Location2.X=1186.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1026.5mil|Location2.X=1186.455mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C21-1nF (27.813mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=565.315mil|Location2.X=745.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=565.315mil|Location2.X=745.448mil|Location1.Y=5366.772mil|Location2.Y=5603.481mil|Absolute=True">SMT Small Component C20-10pF (15.367mm,138.049mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.5mil|Location2.X=3906.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3736.5mil|Location2.X=3906.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C19-1uF (96.647mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4186.5mil|Location2.X=4356.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4186.5mil|Location2.X=4356.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C18-100uF (108.077mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4406.5mil|Location2.X=4576.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4406.5mil|Location2.X=4576.452mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C17-22uF (113.665mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10591.5mil|Location2.X=10761.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10591.5mil|Location2.X=10761.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C16-22uF (270.764mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10371.5mil|Location2.X=10541.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10371.5mil|Location2.X=10541.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C15-22uF (265.176mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9141.5mil|Location2.X=9311.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9141.5mil|Location2.X=9311.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C14-1nF (233.934mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9361.5mil|Location2.X=9531.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9361.5mil|Location2.X=9531.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C13-6.8nF (239.522mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8691.5mil|Location2.X=8861.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8691.5mil|Location2.X=8861.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C12-10pF (222.504mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11511.5mil|Location2.X=11661.458mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11511.5mil|Location2.X=11661.458mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C11-1uF (294.132mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12131.5mil|Location2.X=12301.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12131.5mil|Location2.X=12301.451mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C10-22uF (309.88mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12351.5mil|Location2.X=12488.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12351.5mil|Location2.X=12488.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C9-100uF (315.468mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.5mil|Location2.X=16268.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16131.5mil|Location2.X=16268.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C8-6.8nF (411.48mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15946.5mil|Location2.X=16083.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15946.5mil|Location2.X=16083.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C7-1nF (406.781mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16321.5mil|Location2.X=16458.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=16321.5mil|Location2.X=16458.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C6-10pF (416.306mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17671.5mil|Location2.X=17808.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17671.5mil|Location2.X=17808.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C5-22uF (450.596mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17481.5mil|Location2.X=17618.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=17481.5mil|Location2.X=17618.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C4-22uF (445.77mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18556.5mil|Location2.X=18693.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=18556.5mil|Location2.X=18693.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C3-1uF (473.075mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20381.5mil|Location2.X=20518.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20381.5mil|Location2.X=20518.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C2-100uF (519.43mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20196.5mil|Location2.X=20333.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20196.5mil|Location2.X=20333.228mil|Location1.Y=5370.315mil|Location2.Y=5549.481mil|Absolute=True">SMT Small Component C1-22uF (514.731mm,137.414mm) on Top Layer</acronym></a> - Component origin is already ON grid. - Component pads are OFF grid. No action taken.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6689mil|Location2.X=7110.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6689mil|Location2.X=7110.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True">Small Component B12-575-4 (175.26mm,61.595mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6219mil|Location2.X=6640.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6219mil|Location2.X=6640.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True">Small Component B11-575-4 (163.322mm,61.595mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5744mil|Location2.X=6165.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5744mil|Location2.X=6165.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True">Small Component B10-575-4 (151.257mm,61.595mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5274mil|Location2.X=5695.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5274mil|Location2.X=5695.63mil|Location1.Y=2214.37mil|Location2.Y=2735.981mil|Absolute=True">Small Component B9-575-4 (139.319mm,61.595mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=2404.37mil|Location2.Y=2925.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=2404.37mil|Location2.Y=2925.981mil|Absolute=True">Small Component B8-575-4 (197.485mm,66.421mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=2874.37mil|Location2.Y=3395.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=2874.37mil|Location2.Y=3395.981mil|Absolute=True">Small Component B7-575-4 (197.485mm,78.359mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=3404.37mil|Location2.Y=3925.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=3404.37mil|Location2.Y=3925.981mil|Absolute=True">Small Component B6-575-4 (197.485mm,91.821mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=3899.37mil|Location2.Y=4420.725mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564mil|Location2.X=7985.63mil|Location1.Y=3899.37mil|Location2.Y=4420.725mil|Absolute=True">Small Component B5-575-4 (197.485mm,104.394mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7539mil|Location2.X=7960.63mil|Location1.Y=129.37mil|Location2.Y=650.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7539mil|Location2.X=7960.63mil|Location1.Y=129.37mil|Location2.Y=650.981mil|Absolute=True">Small Component B4-575-4 (196.85mm,8.636mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7549mil|Location2.X=7970.63mil|Location1.Y=729.37mil|Location2.Y=1250.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7549mil|Location2.X=7970.63mil|Location1.Y=729.37mil|Location2.Y=1250.981mil|Absolute=True">Small Component B3-575-4 (197.104mm,23.876mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7554mil|Location2.X=7975.63mil|Location1.Y=1344.37mil|Location2.Y=1865.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7554mil|Location2.X=7975.63mil|Location1.Y=1344.37mil|Location2.Y=1865.981mil|Absolute=True">Small Component B2-575-4 (197.231mm,39.497mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7569mil|Location2.X=7990.63mil|Location1.Y=1794.37mil|Location2.Y=2315.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jasper\Documents\Projects\cleanroom-psm\Overview.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7569mil|Location2.X=7990.63mil|Location1.Y=1794.37mil|Location2.Y=2315.981mil|Absolute=True">Small Component B1-575-4 (197.612mm,50.927mm) on Top Layer</acronym></a> - Component origin is already ON grid.</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
