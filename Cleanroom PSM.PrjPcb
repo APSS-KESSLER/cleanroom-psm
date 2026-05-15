@@ -322,67 +322,165 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QFHTUSCG
 
+[Document17]
+DocumentPath=Components\574-BannaJack\575-4.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document18]
+DocumentPath=Components\574-BannaJack\5754.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=BUWWFBFX
+
+[Document19]
+DocumentPath=Components\1217861-1-GrabTab\1217861-1.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MQYJGVCJ
+
+[Document20]
+DocumentPath=Components\1217861-1-GrabTab\1217861-1.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document21]
+DocumentPath=Components\ESQ-126-14-G-D-OBCHeader\ESQ-126-14-G-D.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document22]
+DocumentPath=Components\ESQ-126-14-G-D-OBCHeader\ESQ-126-14-G-D.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Cleanroom PSM\Design Rule Check - Overview.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Cleanroom PSM\Move Component(s) Origin To Grid - Overview.html
-DItemRevisionGUID=
-
-[GeneratedDocument3]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\NC Drill\PCB_Project.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument4]
+[GeneratedDocument3]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument4]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument6]
+[GeneratedDocument5]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument6]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument7]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument8]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GKO
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument9]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument10]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument12]
+[GeneratedDocument11]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument12]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument13]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\NC Drill\PCB_Project.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument14]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.REP
 DItemRevisionGUID=
 
-[GeneratedDocument16]
+[GeneratedDocument15]
 DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-Project\Fabrication Files\Gerber\PCB_Project.RUL
 DItemRevisionGUID=
 
