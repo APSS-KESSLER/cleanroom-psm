@@ -485,20 +485,20 @@ DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-P
 DItemRevisionGUID=
 
 [Parameter1]
-Name=BoardRevision
-Value=V1
+Name=Project
+Value=Cleanroom
 
 [Parameter2]
-Name=Designer
-Value=Filip K
-
-[Parameter3]
 Name=DesignName
 Value=Cleanroom PSM
 
+[Parameter3]
+Name=Designer
+Value=Jasper M-W
+
 [Parameter4]
-Name=Project
-Value=Cleanroom
+Name=BoardRevision
+Value=V1
 
 [Configuration1]
 Name=Sources
