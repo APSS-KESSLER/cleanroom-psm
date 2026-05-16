@@ -1,0 +1,9 @@
+Removed Member From Class: ClassName=Interfaces Member=R?
+Change Component Designator: OldDesignator=C? NewDesignator=C9
+Change Component Designator: OldDesignator=C? NewDesignator=C10
+Change Component Designator: OldDesignator=D? NewDesignator=D3
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=R? NewDesignator=R7
+Change Net Name : Old Net Name=NetD?_A New Net Name=NetD3_A
+Added Member To Class: ClassName=Overview Member=Component C10 22uF
+Added Member To Class: ClassName=Interfaces Member=Component R7 12k

@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=3V3_IN Pin=SB1-2
+Removed Member From Class: ClassName=Overview Member=R7
+Removed Member From Class: ClassName=Interfaces Member=SB1
+Removed Member From Class: ClassName=Interfaces Member=SB2
+Added Component: Designator=T*(Test Pad)
+Added Pin To Net: NetName=3V3_IN Pin=Q3-2
+Added Pin To Net: NetName=3V3_IN Pin=SW5-1
+Added Pin To Net: NetName=3V3_IN Pin=T*-1
+Added Member To Class: ClassName=Overview Member=Component R6 620
+Added Member To Class: ClassName=Interfaces Member=Component T* Test Pad

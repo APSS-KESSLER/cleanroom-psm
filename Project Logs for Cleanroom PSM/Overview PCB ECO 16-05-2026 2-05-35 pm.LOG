@@ -1,0 +1,23 @@
+Added Component: Designator=B13(5754)
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.keyelco.com/product.cfm/product_id/2379"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Geometry.Height"; Value = "2.49mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Keystone Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "575-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "534-575-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/575-4?qs=w4ABFRoM%2FL8pPaUzIDyX8Q%3D%3D"; VariantName = "[No Variations]"
+Added Component: Designator=B14(5754)
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.keyelco.com/product.cfm/product_id/2379"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Geometry.Height"; Value = "2.49mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Keystone Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "575-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = "534-575-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Keystone-Electronics/575-4?qs=w4ABFRoM%2FL8pPaUzIDyX8Q%3D%3D"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V_RAW Pin=B13-1
+Added Pin To Net: NetName=GND Pin=B14-1
+Added Member To Class: ClassName=Interfaces Member=Component B13 575-4
+Added Member To Class: ClassName=Interfaces Member=Component B14 575-4
+Added Member To Class: ClassName=Overview Member=Component C? 22uF
+Added Member To Class: ClassName=Overview Member=Component Q1 MMBT619
+Added Member To Class: ClassName=Interfaces Member=Component Q3 SSM3J328R,LF
+Added Member To Class: ClassName=Overview Member=Component SW3 ANT11SF1CQE
+Added Member To Class: ClassName=Overview Member=Component SW4 ANT11SF1CQE

@@ -1,0 +1,131 @@
+Removed Pin From Net: NetName=GND Pin=C9-1
+Removed Pin From Net: NetName=3V3_IN Pin=C9-2
+Removed Pin From Net: NetName=GND Pin=C10-1
+Removed Pin From Net: NetName=3V3_IN Pin=C10-2
+Removed Pin From Net: NetName=GND Pin=C13-1
+Removed Pin From Net: NetName=GND Pin=C14-1
+Removed Pin From Net: NetName=5V_PG Pin=C14-2
+Removed Pin From Net: NetName=GND Pin=C15-1
+Removed Pin From Net: NetName=GND Pin=C16-1
+Removed Pin From Net: NetName=GND Pin=C17-1
+Removed Pin From Net: NetName=3V3_IN Pin=C17-2
+Removed Pin From Net: NetName=GND Pin=C18-1
+Removed Pin From Net: NetName=3V3_IN Pin=C18-2
+Removed Pin From Net: NetName=GND Pin=C21-1
+Removed Pin From Net: NetName=GND Pin=C22-1
+Removed Pin From Net: NetName=GND Pin=C23-1
+Removed Pin From Net: NetName=GND Pin=C24-1
+Removed Pin From Net: NetName=GND Pin=D8-C
+Removed Pin From Net: NetName=GND Pin=D10-C
+Removed Pin From Net: NetName=GND Pin=D11-C
+Removed Pin From Net: NetName=GND Pin=Q3-2
+Removed Pin From Net: NetName=GND Pin=R17A-1
+Removed Pin From Net: NetName=3V3_IN Pin=R23-2
+Removed Pin From Net: NetName=GND Pin=R26-1
+Removed Pin From Net: NetName=GND Pin=R27-1
+Removed Pin From Net: NetName=3V3_IN Pin=R28-1
+Removed Pin From Net: NetName=5V_BUS Pin=SW3-1
+Removed Pin From Net: NetName=5V_LUP_BUS Pin=SW4-1
+Removed Pin From Net: NetName=3V3_IN Pin=SW7-1
+Removed Pin From Net: NetName=GND Pin=SW7-3
+Removed Pin From Net: NetName=3V3_IN Pin=SW8-1
+Removed Pin From Net: NetName=GND Pin=SW8-3
+Removed Pin From Net: NetName=3V3_IN Pin=SW9-1
+Removed Pin From Net: NetName=5V_PG Pin=U2-1
+Removed Pin From Net: NetName=3V3_IN Pin=U2-2
+Removed Pin From Net: NetName=GND Pin=U2-4
+Removed Pin From Net: NetName=3V3_IN Pin=U3-2
+Removed Pin From Net: NetName=GND Pin=U3-4
+Removed Member From Class: ClassName=Overview Member=C9
+Removed Member From Class: ClassName=Overview Member=C10
+Removed Member From Class: ClassName=Overview Member=C11
+Removed Member From Class: ClassName=Overview Member=C12
+Removed Member From Class: ClassName=Overview Member=C13
+Removed Member From Class: ClassName=Overview Member=C14
+Removed Member From Class: ClassName=Overview Member=C15
+Removed Member From Class: ClassName=Overview Member=C16
+Removed Member From Class: ClassName=Overview Member=C17
+Removed Member From Class: ClassName=Overview Member=C18
+Removed Member From Class: ClassName=Overview Member=C19
+Removed Member From Class: ClassName=Overview Member=C20
+Removed Member From Class: ClassName=Overview Member=C21
+Removed Member From Class: ClassName=Overview Member=C22
+Removed Member From Class: ClassName=Overview Member=C23
+Removed Member From Class: ClassName=Overview Member=C24
+Removed Member From Class: ClassName=Overview Member=D3
+Removed Member From Class: ClassName=Overview Member=D8
+Removed Member From Class: ClassName=Overview Member=D10
+Removed Member From Class: ClassName=Overview Member=D11
+Removed Member From Class: ClassName=Overview Member=L2
+Removed Member From Class: ClassName=Overview Member=L3
+Removed Member From Class: ClassName=Overview Member=Q3
+Removed Member From Class: ClassName=Overview Member=R7
+Removed Member From Class: ClassName=Overview Member=R8
+Removed Member From Class: ClassName=Overview Member=R9
+Removed Member From Class: ClassName=Overview Member=R10
+Removed Member From Class: ClassName=Overview Member=R11
+Removed Member From Class: ClassName=Overview Member=R13
+Removed Member From Class: ClassName=Overview Member=R15
+Removed Member From Class: ClassName=Overview Member=R16
+Removed Member From Class: ClassName=Overview Member=R17A
+Removed Member From Class: ClassName=Overview Member=R18A
+Removed Member From Class: ClassName=Overview Member=R18B
+Removed Member From Class: ClassName=Overview Member=R23
+Removed Member From Class: ClassName=Overview Member=R24
+Removed Member From Class: ClassName=Overview Member=R25
+Removed Member From Class: ClassName=Overview Member=R26
+Removed Member From Class: ClassName=Overview Member=R27
+Removed Member From Class: ClassName=Overview Member=R28
+Removed Member From Class: ClassName=Overview Member=R29
+Removed Member From Class: ClassName=Overview Member=R30
+Removed Member From Class: ClassName=Overview Member=R35
+Removed Member From Class: ClassName=Overview Member=R36
+Removed Member From Class: ClassName=Overview Member=R41
+Removed Member From Class: ClassName=Overview Member=R44
+Removed Member From Class: ClassName=Overview Member=R45
+Removed Member From Class: ClassName=Overview Member=R46
+Removed Member From Class: ClassName=Overview Member=R47
+Removed Member From Class: ClassName=Overview Member=SW3
+Removed Member From Class: ClassName=Overview Member=SW4
+Removed Member From Class: ClassName=Overview Member=SW7
+Removed Member From Class: ClassName=Overview Member=SW8
+Removed Member From Class: ClassName=Overview Member=U2
+Removed Member From Class: ClassName=Overview Member=U3
+Added Component: Designator=Q1(SOT23F-3-0.8mm)
+Add component (AddParameter): Name = "APSS Standard Part"; Value = "APSS Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF Part No."; Value = "SSM3J328R,LF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SOT23-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = "20 Vds"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part No."; Value = "SSM3J328RLFCT-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2 Part No."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temp Range"; Value = "0°C ~ 150°C (TJ)"; VariantName = "[No Variations]"
+Added Component: Designator=SB?(Solder Bridge Closed 0201)
+Add component (AddParameter): Name = "DEBUG"; Value = "DEBUG"; VariantName = "[No Variations]"
+Added Component: Designator=SB?(Solder Bridge Closed 0201)
+Add component (AddParameter): Name = "DEBUG"; Value = "DEBUG"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3_OUT Pin=B2-1
+Added Pin To Net: NetName=12V_OUT Pin=B3-1
+Added Pin To Net: NetName=3V3_OUT Pin=B6-1
+Added Pin To Net: NetName=12V_OUT Pin=B7-1
+Added Pin To Net: NetName=3V3_OUT Pin=J2-1
+Added Pin To Net: NetName=3V3_OUT Pin=J2-2
+Added Pin To Net: NetName=12V_OUT Pin=J3-1
+Added Pin To Net: NetName=12V_OUT Pin=J3-2
+Added Pin To Net: NetName=3V3_OUT Pin=J6-1
+Added Pin To Net: NetName=3V3_OUT Pin=J6-2
+Added Pin To Net: NetName=12V_OUT Pin=J7-1
+Added Pin To Net: NetName=12V_OUT Pin=J7-2
+Added Pin To Net: NetName=12V_OUT Pin=R33-2
+Added Pin To Net: NetName=12V_OUT Pin=R34-1
+Added Pin To Net: NetName=3V3_IN Pin=SB?-1
+Change Net Name : Old Net Name=12V_OUT New Net Name=5V_OUT
+Added Pin To Net: NetName=5V_IN Pin=SB?-1
+Added Pin To Net: NetName=5V_IN Pin=SW9-1
+Added Net: Name=5V_IN
+Added Member To Class: ClassName=Interfaces Member=Component Q1 SSM3J328R,LF
+Added Member To Class: ClassName=Interfaces Member=Component SB? Solder Jumper Normally Closed 0201
+Added Member To Class: ClassName=Interfaces Member=Component SB? Solder Jumper Normally Closed 0201
+Added Rule: Name=Schematic Supply Nets_7
