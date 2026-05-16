@@ -1,7 +1,12 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\Nathaniel Brown\OneDrive\Documents\GitHub\cleanroom-psm\Overview.PcbDoc
-Date     : 24/02/2026
-Time     : 10:23:35 am
+PCB File : C:\Users\jaspe\Documents\projects\cleanroom-psm\Overview.PcbDoc
+Date     : 16/05/2026
+Time     : 4:45:10 pm
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: NONET_L01_P004 In net GND On Top Layer
+   Polygon named: NONET_L01_P003 In net 3V3_OUT On Top Layer
+   Polygon named: NONET_L01_P000 In net 5V_OUT On Top Layer
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
@@ -13,9 +18,12 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
-Rule Violations :0
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L01_P000) on Top Layer 
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L01_P003) on Top Layer 
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L01_P004) on Top Layer 
+Rule Violations :3
 
-Processing Rule : Width Constraint (Min=0.15mm) (Max=25.4mm) (Preferred=0.3mm) (All)
+Processing Rule : Width Constraint (Min=0.15mm) (Max=1mm) (Preferred=0.3mm) (All)
 Rule Violations :0
 
 Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
@@ -40,23 +48,19 @@ Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (IsPad),(All)
 Rule Violations :0
 
 Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
-Rule Violations :0
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "B7" (66.319mm,50.521mm) on Top Overlay And Track (66.167mm,13.97mm)(66.167mm,70.485mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "B9" (24.821mm,70.366mm) on Top Overlay And Track (18.428mm,70.993mm)(33.655mm,70.993mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "J9" (18.745mm,71.12mm) on Top Overlay And Track (18.428mm,70.993mm)(33.655mm,70.993mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+Rule Violations :3
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Track (86.233mm,83.363mm)(86.233mm,89.122mm) on Bottom Layer 
+Rule Violations :1
+
+Processing Rule : Height Constraint (Min=0mm) (Max=45.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
-Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
-   Violation between Height Constraint: Small Component SW1-ANT11SF1CQE (123.698mm,57.326mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW2-ANT11SF1CQE (115.189mm,47.752mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW3-ANT11SF1CQE (120.143mm,110.871mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW4-ANT11SF1CQE (125.223mm,101.854mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW5-ANT11SF1CQE (94.996mm,66.802mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW6-ANT11SF1CQE (131.572mm,36.449mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW7-ANT11SF1CQE (158.242mm,85.09mm) on Top Layer Actual Height = 28.207mm
-   Violation between Height Constraint: Small Component SW8-ANT11SF1CQE (76.2mm,78.867mm) on Top Layer Actual Height = 28.207mm
-Rule Violations :8
 
-
-Violations Detected : 8
+Violations Detected : 7
 Waived Violations : 0
-Time Elapsed        : 00:00:00
+Time Elapsed        : 00:00:01
