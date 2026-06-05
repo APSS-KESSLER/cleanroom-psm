@@ -424,6 +424,40 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document23]
+DocumentPath=Components\DFE322520FD-2R2M-P2-Inductor\DFE322520FD-2R2MP2.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document24]
+DocumentPath=Components\DFE322520FD-2R2M-P2-Inductor\DFE322520FD-2R2MP2.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Cleanroom PSM\Design Rule Check - Overview.html
 DItemRevisionGUID=
@@ -485,20 +519,20 @@ DocumentPath=..\..\APSS-Reference-PCBs\Shared Libraries\APSSTemplates\APSS-PCB-P
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Project
-Value=Cleanroom
+Name=BoardRevision
+Value=V1
 
 [Parameter2]
-Name=DesignName
-Value=Cleanroom PSM
-
-[Parameter3]
 Name=Designer
 Value=Jasper M-W
 
+[Parameter3]
+Name=DesignName
+Value=Cleanroom PSM
+
 [Parameter4]
-Name=BoardRevision
-Value=V1
+Name=Project
+Value=Cleanroom
 
 [Configuration1]
 Name=Sources

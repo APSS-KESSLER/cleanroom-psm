@@ -1,0 +1,16 @@
+Added Component: Designator=R2(RESISTOR_0805_2012M-50N)
+Add component (AddParameter): Name = "MF Part No."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rated Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part No."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2 Part No."; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temp Range"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "?%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "15k"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=R2-1
+Added Pin To Net: NetName=NetC2_1 Pin=R2-2
+Added Member To Class: ClassName=Overview Member=Component R2 15k
