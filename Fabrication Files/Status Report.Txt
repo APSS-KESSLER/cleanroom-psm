@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Overview.PcbDoc]
+   Generated File[Cleanroom PSM-V1-NC Drill.TXT]
+   Generated File[Cleanroom PSM-V1-NC Drill.LDP]
+   Generated File[Cleanroom PSM-V1-NC Drill.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 9:41:03 pm On 5/06/2026

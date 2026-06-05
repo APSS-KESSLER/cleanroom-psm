@@ -1,0 +1,76 @@
+Altium Designer Pick and Place Locations
+C:\Users\jasper\Documents\Projects\cleanroom-psm\.\Fabrication Files\Pick Place\Cleanroom PSM-V1-Pick Place.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       05/06/26
+Time:       21:40
+Revision:   1cc2ff73004fce3e4383e70bacfbe5e80cf53e45
+Variant:    No variations
+Units used: mil
+
+Designator Comment             Layer       Footprint                Center-X(mil) Center-Y(mil) Rotation Description                                                           
+R2         15k                 BottomLayer RESISTOR_0805_2012M-50N  1410.000      700.000       270      "Passive - Resistor, Generic"                                         
+T1         "Test Pad"          BottomLayer Test_Pad                 3474.606      3214.105      180      ""                                                                    
+B14        575-4               TopLayer    5754                     3770.000      3500.000      0        "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B13        575-4               TopLayer    5754                     3770.000      3045.000      0        "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+SW4        ANT11SF1CQE         TopLayer    ANT11SF1CQE              3295.002      3205.000      0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+SW3        ANT11SF1CQE         TopLayer    ANT11SF1CQE              2874.998      3205.039      0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+R7         12k                 BottomLayer RESISTOR_0805_2012M-50N  3505.000      3470.000      270      "Passive - Resistor, Generic"                                         
+C10        22uF                BottomLayer CAPACITOR_0805_2012M-70N 3050.000      3245.000      270      "Passive - Capacitor, Generic"                                        
+C9         22uF                BottomLayer CAPACITOR_0805_2012M-70N 3140.000      3245.000      270      "Passive - Capacitor, Generic"                                        
+Q3         SSM3J328R,LF        BottomLayer SOT23F-3-0.8mm           3512.008      3320.000      90       "Transistor - MOSFET, P-Channel SSM3J328R,LF"                         
+SW5        ANT11SF1CQE         TopLayer    ANT11SF1CQE              2813.332      790.000       0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+H2         ESQ-126-14-G-D      TopLayer    *SAMTEC_ESQ-126-14-G-D   2195.748      3913.465      0        ""                                                                    
+H1         ESQ-126-14-G-D      TopLayer    *SAMTEC_ESQ-126-14-G-D   2195.748      3713.504      0        ""                                                                    
+U1         AP3445LW6-7         BottomLayer SOT23-6N-1.4mm           1540.000      740.000       0        "IC - Regulator, Buck, 2A, 2.7V to 5.5V In, 0.6V to Vin Out, SOT23-6" 
+SW6        ANT11SF1CQE         TopLayer    ANT11SF1CQE              2261.665      790.000       0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+SW2        ANT11SF1CQE         TopLayer    ANT11SF1CQE              2194.998      3205.000      0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+SW1        ANT11SF1CQE         TopLayer    ANT11SF1CQE              1754.998      3205.000      0        "Switch - Toggle, SPDT, 5A @ 28VDC"                                   
+R42        68k                 BottomLayer RESISTOR_0805_2012M-50N  1325.000      700.000       90       "Passive - Resistor, Generic"                                         
+R40        620                 TopLayer    RESISTOR_0805_2012M-50N  3490.003      3054.961      270      "Passive - Resistor, Generic"                                         
+R39        620                 TopLayer    RESISTOR_0805_2012M-50N  2680.000      3060.000      270      "Passive - Resistor, Generic"                                         
+R38        240                 TopLayer    RESISTOR_0805_2012M-50N  2388.189      3060.000      270      "Passive - Resistor, Generic"                                         
+R37        240                 TopLayer    RESISTOR_0805_2012M-50N  1560.000      3055.000      270      "Passive - Resistor, Generic"                                         
+R34        620                 BottomLayer RESISTOR_0805_2012M-50N  3040.000      814.528       0        "Passive - Resistor, Generic"                                         
+R32        240                 BottomLayer RESISTOR_0805_2012M-50N  1895.000      905.000       180      "Passive - Resistor, Generic"                                         
+R31        4.3k                BottomLayer RESISTOR_0805_2012M-50N  2040.000      905.000       180      "Passive - Resistor, Generic"                                         
+R1         68k                 BottomLayer RESISTOR_0805_2012M-50N  1525.000      625.000       0        "Passive - Resistor, Generic"                                         
+Q1         MMBT619             BottomLayer SOT23-3N-1.15mm          2035.000      785.000       180      "Transistor - BJT NPN MMBT619"                                        
+L1         DFE322520FD-2R2M=P2 BottomLayer IND_DFE3225_MUR          1505.000      890.000       180      Description                                                           
+J12        1217861-1           TopLayer    CONN_1217861-1_TEC       800.000       1188.500      90       "250 FASTON,PCB TAB,TCBR"                                             
+J11        1217861-1           TopLayer    CONN_1217861-1_TEC       810.000       1660.167      90       "250 FASTON,PCB TAB,TCBR"                                             
+J10        1217861-1           TopLayer    CONN_1217861-1_TEC       805.000       2131.833      90       "250 FASTON,PCB TAB,TCBR"                                             
+J9         1217861-1           TopLayer    CONN_1217861-1_TEC       805.000       2603.500      90       "250 FASTON,PCB TAB,TCBR"                                             
+J8         1217861-1           TopLayer    CONN_1217861-1_TEC       3365.000      1335.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J7         1217861-1           TopLayer    CONN_1217861-1_TEC       2813.333      1335.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J6         1217861-1           TopLayer    CONN_1217861-1_TEC       2261.667      1335.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J5         1217861-1           TopLayer    CONN_1217861-1_TEC       1707.738      1335.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J4         1217861-1           TopLayer    CONN_1217861-1_TEC       3365.000      2185.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J3         1217861-1           TopLayer    CONN_1217861-1_TEC       2813.333      2185.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J2         1217861-1           TopLayer    CONN_1217861-1_TEC       2261.667      2185.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+J1         1217861-1           TopLayer    CONN_1217861-1_TEC       1708.170      2185.000      0        "250 FASTON,PCB TAB,TCBR"                                             
+D7         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    3476.814      3194.961      270      "Diode - LED, 0603"                                                   
+D6         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    2692.032      3200.000      270      "Diode - LED, 0603"                                                   
+D5         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    2375.000      3200.000      270      "Diode - LED, 0603"                                                   
+D4         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    1552.968      3190.000      270      "Diode - LED, 0603"                                                   
+D2         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    3170.000      785.000       90       "Diode - LED, 0603"                                                   
+D1         "LTST-C190 Series"  TopLayer    LED_0603_1608M_0.80mm    1905.000      785.000       90       "Diode - LED, 0603"                                                   
+C6         100uF               BottomLayer CAPACITOR_0805_2012M-70N 1835.000      660.000       90       "Passive - Capacitor, Generic"                                        
+C5         22uF                BottomLayer CAPACITOR_0805_2012M-70N 1750.000      660.000       90       "Passive - Capacitor, Generic"                                        
+C4         22uF                BottomLayer CAPACITOR_0805_2012M-70N 1540.000      1105.000      0        "Passive - Capacitor, Generic"                                        
+C3         22uF                BottomLayer CAPACITOR_0805_2012M-70N 1540.000      1020.000      0        "Passive - Capacitor, Generic"                                        
+C2         22uF                BottomLayer CAPACITOR_0805_2012M-70N 1665.984      660.000       270      "Passive - Capacitor, Generic"                                        
+B12        575-4               TopLayer    5754                     1165.000      1165.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B11        575-4               TopLayer    5754                     1165.000      1636.667      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B10        575-4               TopLayer    5754                     1165.000      2108.333      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B9         575-4               TopLayer    5754                     1165.000      2580.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B8         575-4               TopLayer    5754                     3365.000      1750.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B7         575-4               TopLayer    5754                     2813.333      1750.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B6         575-4               TopLayer    5754                     2261.667      1735.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B5         575-4               TopLayer    5754                     1709.995      1735.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B4         575-4               TopLayer    5754                     3365.000      2605.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B3         575-4               TopLayer    5754                     2813.333      2605.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B2         575-4               TopLayer    5754                     2261.667      2590.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
+B1         575-4               TopLayer    5754                     1695.709      2590.000      270      "Test Plugs & Test Jacks NON-INSUL JACK .218" BRASS NICKEL PLTD"      
